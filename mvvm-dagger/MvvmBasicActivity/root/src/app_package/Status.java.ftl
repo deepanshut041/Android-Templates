@@ -1,4 +1,4 @@
-package ${packageName};
+package ${packageName}.${newPackage};
 
 public enum ${className}Status{
     IDLE,

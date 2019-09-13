@@ -1,4 +1,10 @@
-package ${packageName};
+package ${packageName}.${newPackage};
+
+import androidx.lifecycle.ViewModel;
+
+import javax.inject.Inject;
+
+import io.reactivex.disposables.CompositeDisposable;
 
 public class ${className}ViewModel extends ViewModel {
 

@@ -1,4 +1,7 @@
-package ${packageName};
+package ${packageName}.${newPackage};
+
+import android.os.Bundle;
+import android.widget.Toast;
 
 public class ${className}Activity extends BaseActivity<${className}ViewModel, Activity${className}Binding> implements ${className}ActivityListener {
     
