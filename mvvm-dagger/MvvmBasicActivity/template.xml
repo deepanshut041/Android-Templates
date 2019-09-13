@@ -3,7 +3,7 @@
         name="MVVM Basic Activity"
         description="Creates a new MVVM classes - Activity, ViewModel, Dagger Module, Listener, Status.">
 
-    <category value="Other"/>
+     <category value="Activity"/>
 
     <parameter id="className"
         name="Functionality Name"

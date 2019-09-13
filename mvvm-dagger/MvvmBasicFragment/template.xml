@@ -3,7 +3,7 @@
         name="MVVM Basic Fragment"
         description="Creates a new MVVM classes - Fragment, ViewModel, Dagger Module, Status.">
 
-    <category value="Other"/>
+    <category value="Fragment"/>
 
     <parameter id="className"
         name="Functionality Name"

@@ -31,10 +31,10 @@ public class ${className}Fragment extends BaseFragment<${className}ViewModel, Fr
 
         switch (status) {
             case PROCESSING:
-                Toast.makeText(this, "PROCESSING .....", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "PROCESSING .....", Toast.LENGTH_SHORT).show();
                 break;
             case IDLE:
-                Toast.makeText(this, "IDLE .....", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "IDLE .....", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
