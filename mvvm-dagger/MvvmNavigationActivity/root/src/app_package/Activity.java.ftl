@@ -21,7 +21,7 @@ public class ${className}Activity extends BaseActivity<${className}ViewModel, Ac
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Navigation Drawer settings
-        mToggle = new ActionBarDrawerToggle(this, dataBinding.drawer, R.string.openDrawer, R.string.closeDrawer);
+        mToggle = new ActionBarDrawerToggle(this, dataBinding.drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         dataBinding.drawer.addDrawerListener(mToggle);
         mToggle.syncState();
 

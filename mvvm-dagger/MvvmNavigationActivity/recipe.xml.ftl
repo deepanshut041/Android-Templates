@@ -1,32 +1,54 @@
 <?xml version="1.0"?>
 <recipe>
 
-    <instantiate from="src/app_package/Activity.java.ftl"
+    <merge from="${resIn}/values/strings.xml.ftl"
+             to="${escapeXmlAttribute(resOut)}/values/strings.xml" />
+
+    <merge from="${resIn}/values/dimens.xml.ftl"
+             to="${escapeXmlAttribute(resOut)}/values/dimens.xml" />
+
+    <instantiate from="${resIn}/menu/main.xml.ftl"
+            to="${escapeXmlAttribute(resOut)}/menu/${menuName}.xml" />
+
+    <copy from="${resIn}/drawable"
+            to="${escapeXmlAttribute(resOut)}/drawable" />
+
+    <#if !(hasDependency('com.google.android.material:material'))>
+        <dependency mavenUrl="com.google.android.material:material:1.0.0"/>
+    </#if>
+
+    <#if !(hasDependency('androidx.appcompat:appcompat'))>
+        <dependency mavenUrl="androidx.appcompat:appcompat:1.1.0"/>
+    </#if>
+
+    <instantiate from="${resIn}/layout/navigation_view.xml.ftl"
+                 to="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
+    
+    <instantiate from="${resIn}/layout/navigation_header.xml.ftl"
+                 to="${escapeXmlAttribute(resOut)}/layout/${navHeaderLayoutName}.xml" />
+    
+    <instantiate from="${resIn}/menu/drawer.xml.ftl"
+                 to="${escapeXmlAttribute(resOut)}/menu/${drawerMenu}.xml" />
+
+    <#--  Java File start from here  -->
+
+    <instantiate from="${srcIn}/Activity.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}Activity.java" />
 
-    <instantiate from="src/app_package/Status.java.ftl"
+    <instantiate from="${srcIn}/Status.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}Status.java" />
 
 
-    <instantiate from="src/app_package/ViewModel.java.ftl"
+    <instantiate from="${srcIn}/ViewModel.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}ViewModel.java" />
 
 
-    <instantiate from="src/app_package/ActivityListener.java.ftl"
+    <instantiate from="${srcIn}/ActivityListener.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}ActivityListener.java" />
 
                    
-    <instantiate from="src/app_package/ActivityModule.java.ftl"
+    <instantiate from="${srcIn}/ActivityModule.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}ActivityModule.java" />
-
-    <instantiate from="res/layout/simple.xml.ftl"
-                 to="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
-    
-    <instantiate from="res/layout/nav_header.xml.ftl"
-                 to="${escapeXmlAttribute(resOut)}/layout/nav_${layoutName}_header.xml" />
-    
-    <instantiate from="res/layout/nav_menu.xml.ftl"
-                 to="${escapeXmlAttribute(resOut)}/menu/nav_${layoutName}_menu.xml" />
 
 
     <open file="${srcOut}/${newPackage}/${className}ActivityListener.java"/>
