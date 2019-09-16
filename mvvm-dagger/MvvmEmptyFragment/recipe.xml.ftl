@@ -18,6 +18,5 @@
 
     <open file="${srcOut}/${newPackage}/${className}ViewModel.java"/>
     <open file="${srcOut}/${newPackage}/${className}Fragment.java"/>
-    <open file="${srcOut}/${newPackage}/${className}Status.java"/>
     <open file="${srcOut}/${newPackage}/${className}FragmentModule.java"/>
 </recipe>

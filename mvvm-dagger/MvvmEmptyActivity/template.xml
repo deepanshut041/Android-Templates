@@ -1,10 +1,7 @@
-<template 
-        format="4"
+<template format="4"
         revision="1"
-        name="MVVM Navigation Drawer Activity"
-        minApi="17"
-        minBuildApi="17"
-        description="Creates a new Activity with a Navigation Drawer and MVVM classes">
+        name="MVVM Empty Activity"
+        description="Creates new Empty Activity with MVVM Classes">
 
     <category value="Activity"/>
     <formfactor value="Mobile"/>
@@ -65,39 +62,8 @@
         constraints="package"
         default="com.mycompany.myapp" />
 
-    <parameter
-        id="navigationDrawerLayout"
-        name="Navigation Drawer Fragment Name"
-        type="string"
-        visibility="false"
-        suggest="${activityToLayout(activityClass, 'drawer')}"
-        constraints="layout|unique"
-        default="fragment_navigation_drawer"/>
-
-    <parameter
-        id="navHeaderLayoutName"
-        name="Navigation Header Layout Name"
-        type="string"
-        constraints="layout|unique"
-        suggest="${activityToLayout(activityClass, 'nav_header')}"
-        default="nav_header_main"
-        visibility="false"
-        help="The name of the Navigation header layout to create for the activity" />
-
-    <parameter
-        id="drawerMenu"
-        name="Drawer Menu Name"
-        type="string"
-        constraints="layout|unique"
-        suggest="${layoutName}_drawer"
-        default="activity_main_drawer"
-        visibility="false"
-        help="The name of the Drawer menu to create for the activity" />
-
-    <!-- 128x128 thumbnails relative to template.xml -->
     <thumbs>
-        <!-- default thumbnail is required -->
-        <thumb>template_blank_activity_drawer.png</thumb>
+        <thumb>template_blank_activity.png</thumb>
     </thumbs>
 
     <globals file="globals.xml.ftl" />

@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-public class ${className}Fragment extends BaseFragment<${className}ViewModel, Fragment${className}Binding> {
+public class ${fragmentClass} extends BaseFragment<${className}ViewModel, Fragment${className}Binding> {
 
-    public ${className}Fragment() {
+    public ${fragmentClass}() {
         // Required empty public constructor
     }
 
