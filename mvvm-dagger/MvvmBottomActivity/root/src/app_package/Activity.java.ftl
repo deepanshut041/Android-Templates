@@ -5,11 +5,13 @@ import android.widget.Toast;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class ${className}Activity extends BaseActivity<${className}ViewModel, Activity${className}Binding> implements ${className}ActivityListener {
     
     private NavController navController;
+    private AppBarConfiguration appBarConfiguration;
 
     @Override
     protected Class<${className}ViewModel> getViewModel() {
@@ -28,6 +30,8 @@ public class ${className}Activity extends BaseActivity<${className}ViewModel, Ac
 
         navController = Navigation.findNavController(this, R.id.fragment);
         NavigationUI.setupWithNavController(dataBinding.bottomNav, navController);
+        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     }
 
     private void statusObserver(${className}Status status) {
@@ -39,6 +43,12 @@ public class ${className}Activity extends BaseActivity<${className}ViewModel, Ac
                 Toast.makeText(this, "IDLE .....", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
+                || super.onSupportNavigateUp();
     }
 
 }
