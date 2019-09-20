@@ -8,8 +8,7 @@
 
     <instantiate from="src/app_package/ViewModel.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}ViewModel.java" />
-
-                   
+                
     <instantiate from="src/app_package/FragmentModule.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}FragmentModule.java" />
 
