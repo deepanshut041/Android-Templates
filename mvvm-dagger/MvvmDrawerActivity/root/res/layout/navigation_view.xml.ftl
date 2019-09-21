@@ -11,10 +11,13 @@
         android:layout_height="match_parent"
         tools:openDrawer="start">
 
-        <FrameLayout
-                android:id="@+id/fragment_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+        <fragment
+            android:id="@+id/fragment"
+            app:navGraph="@navigation/${classToResource(className)}"
+            app:defaultNavHost="true"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"
