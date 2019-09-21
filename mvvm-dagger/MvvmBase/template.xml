@@ -1,13 +1,16 @@
-<template format="4"
+<template 
+        format="4"
         revision="1"
-        name="MVVM Empty Activity"
-        description="Creates new Empty Activity with MVVM Classes">
+        name="MVVM Base"
+        minApi="17"
+        minBuildApi="17"
+        description="Creates a new Application with base">
 
     <category value="MVVM"/>
     <formfactor value="Mobile"/>
 
     <parameter id="newPackage"
-        name="Package Name"
+        name="New Package Name"
         type="string"
         constraints="nonempty"
         default="main"
@@ -49,21 +52,26 @@
         help="The name of the activity. For launcher activities, the application title." />
 
     <parameter
-        id="isLauncher"
-        name="Launcher Activity"
-        type="boolean"
-        default="false"
-        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
-
-    <parameter
         id="packageName"
         name="Package name"
         type="string"
         constraints="package"
         default="com.mycompany.myapp" />
 
+    <parameter
+        id="bottomMenu"
+        name="Bottom Menu Name"
+        type="string"
+        constraints="layout|unique"
+        suggest="${classToResource(className)}_bottom"
+        default="activity_main_bottom"
+        visibility="false"
+        help="The name of the Bottom menu to create for the activity" />
+
+    <!-- 128x128 thumbnails relative to template.xml -->
     <thumbs>
-        <thumb>template_blank_activity.png</thumb>
+        <!-- default thumbnail is required -->
+        <thumb>template_bottom_navigation_activity.png</thumb>
     </thumbs>
 
     <globals file="globals.xml.ftl" />

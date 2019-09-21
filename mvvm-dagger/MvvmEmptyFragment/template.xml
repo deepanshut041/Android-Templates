@@ -5,7 +5,7 @@
         name="MVVM Empty Fragment"
         description="Creates new Empty Fragment with MVVM Classes">
 
-    <category value="Fragment"/>
+    <category value="MVVM"/>
     <formfactor value="Mobile"/>
 
     <parameter id="newPackage"

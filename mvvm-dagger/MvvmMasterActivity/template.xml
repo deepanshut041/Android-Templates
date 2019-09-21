@@ -6,7 +6,7 @@
         minBuildApi="17"
         description="Creates a new Activity with Navigation Drawer, Bottom Navigation and MVVM classes">
 
-    <category value="Activity"/>
+    <category value="MVVM"/>
     <formfactor value="Mobile"/>
 
     <parameter id="newPackage"
