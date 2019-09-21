@@ -29,6 +29,7 @@ public class ${className}Activity extends BaseActivity<${className}ViewModel, Ac
         viewModel.getStatus().observe(this, this::statusObserver);
 
         navController = Navigation.findNavController(this, R.id.fragment);
+        NavigationUI.setupWithNavController(dataBinding.bottomNav, navController);
         NavigationUI.setupWithNavController(dataBinding.navView, navController);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph())
         .setDrawerLayout(dataBinding.drawer).build();
@@ -36,7 +37,6 @@ public class ${className}Activity extends BaseActivity<${className}ViewModel, Ac
     }
 
     private void statusObserver(${className}Status status) {
-
         switch (status) {
             case PROCESSING:
                 Toast.makeText(this, "PROCESSING .....", Toast.LENGTH_SHORT).show();
