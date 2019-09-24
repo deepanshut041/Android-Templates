@@ -2,6 +2,8 @@ package ${packageName}.${newPackage};
 
 import androidx.lifecycle.ViewModel;
 
+import com.squrlabs.mvvm.di.viewmodel.ViewModelKey;
+
 import dagger.Binds;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -21,16 +23,16 @@ import ${packageName}.${newPackage}.send.SendFragment;
 import ${packageName}.${newPackage}.send.SendFragmentModule;
 
 @Module
-public abstract class ${className}ActivityModule {
+public abstract class ${moduleClass} {
     @Binds
-    abstract ${className}ActivityListener providesFragmentListener(${className}Activity activity);
+    abstract ${listenerClass} providesFragmentListener(${activityClass} activity);
 
     @Binds
     @IntoMap
-    @ViewModelKey(${className}ViewModel.class)
+    @ViewModelKey(${viewModelClass}.class)
     @SuppressWarnings("unused")
-    abstract ViewModel viewModel(${className}ViewModel viewModel);
-
+    abstract ViewModel viewModel(${viewModelClass} viewModel);
+    
     @SuppressWarnings("unused")
     @ContributesAndroidInjector(modules = HomeFragmentModule.class)
     abstract HomeFragment homeFragment();

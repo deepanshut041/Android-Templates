@@ -8,14 +8,16 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-public class ${className}Activity extends BaseActivity<${className}ViewModel, Activity${className}Binding> implements ${className}ActivityListener {
+import com.squrlabs.mvvm.ui.BaseActivity;
+
+public class ${activityClass} extends BaseActivity<${viewModelClass}, ${bindingClass}> implements ${listenerClass} {
     
     private NavController navController;
     private AppBarConfiguration appBarConfiguration;
 
     @Override
-    protected Class<${className}ViewModel> getViewModel() {
-        return ${className}ViewModel.class;
+    protected Class<${viewModelClass}> getViewModel() {
+        return ${viewModelClass}.class;
     }
 
     @Override
@@ -35,7 +37,7 @@ public class ${className}Activity extends BaseActivity<${className}ViewModel, Ac
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     }
 
-    private void statusObserver(${className}Status status) {
+    private void statusObserver(${statusClass} status) {
 
         switch (status) {
             case PROCESSING:
