@@ -26,7 +26,7 @@ Just copy all directories inside mvvm-dagger to `$ANDROID_STUDIO_FOLDER$\plugins
 
 ### For Linux
 
-Just copy all directories inside mvvm-dagger to `$ANDROID_STUDIO_FOLDER$\plugins\android\lib\templates\other\`
+Just copy all directories inside mvvm-dagger to `$ANDROID_STUDIO_FOLDER$/plugins/android/lib/templates/other\`
 
 ## How to use
 
@@ -80,7 +80,14 @@ dependencies {
 }
 ```
 
-![Getting Started](static/createboilerplate.png "Create MVP Boilerplate")
+Than create Mvvm Base from root directory. After that add below line to AndroidManifest.xml
+
+```
+<application
+    android:name=".App"
+    .....
+    />
+```
 
 ### 2. Generate base boilerplate
 

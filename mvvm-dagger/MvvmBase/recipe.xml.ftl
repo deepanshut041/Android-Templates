@@ -13,4 +13,7 @@
     <instantiate from="${srcIn}/ActivityBuilderModule.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/di/modules/ActivityBuilderModule.java" />
 
+    <instantiate from="${srcIn}/package-info.java.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/ui/package-info.java" />
+
 </recipe>
