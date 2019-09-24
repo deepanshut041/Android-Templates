@@ -60,8 +60,10 @@ dependencies {
 
 
     // Android
-    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // Mvvm helper
+    implementation 'com.squrlabs:mvvm-helper:1.0.0'
 
     // Dagger 2
     implementation "com.google.dagger:dagger:$DAGGER_VERSION"

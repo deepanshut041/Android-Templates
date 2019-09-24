@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <recipe>
-
+    <merge from="AndroidManifest.xml.ftl"
+             to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
     <instantiate from="src/app_package/Activity.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}Activity.java" />
 
@@ -22,10 +23,4 @@
     <instantiate from="res/layout/simple.xml.ftl"
                  to="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
 
-
-    <open file="${srcOut}/${newPackage}/${className}ActivityListener.java"/>
-    <open file="${srcOut}/${newPackage}/${className}ViewModel.java"/>
-    <open file="${srcOut}/${newPackage}/${className}Activity.java"/>
-    <open file="${srcOut}/${newPackage}/${className}Status.java"/>
-    <open file="${srcOut}/${newPackage}/${className}ActivityModule.java"/>
 </recipe>

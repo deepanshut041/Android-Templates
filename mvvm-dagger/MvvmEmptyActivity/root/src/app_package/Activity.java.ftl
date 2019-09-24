@@ -3,11 +3,13 @@ package ${packageName}.${newPackage};
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class ${className}Activity extends BaseActivity<${className}ViewModel, Activity${className}Binding> implements ${className}ActivityListener {
+import com.squrlabs.mvvm.ui.BaseActivity;
+
+public class ${activityClass} extends BaseActivity<${viewModelClass}, ${bindingClass}> implements ${listenerClass} {
     
     @Override
-    protected Class<${className}ViewModel> getViewModel() {
-        return ${className}ViewModel.class;
+    protected Class<${viewModelClass}> getViewModel() {
+        return ${viewModelClass}.class;
     }
 
     @Override
@@ -21,7 +23,7 @@ public class ${className}Activity extends BaseActivity<${className}ViewModel, Ac
         viewModel.getStatus().observe(this, this::statusObserver);
     }
 
-    private void statusObserver(${className}Status status) {
+    private void statusObserver(${statusClass} status) {
 
         switch (status) {
             case PROCESSING:

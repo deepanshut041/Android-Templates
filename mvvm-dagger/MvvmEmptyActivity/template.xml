@@ -1,6 +1,9 @@
-<template format="4"
+<template 
+        format="4"
         revision="1"
         name="MVVM Empty Activity"
+        minApi="17"
+        minBuildApi="17"
         description="Creates new Empty Activity with MVVM Classes">
 
     <category value="MVVM"/>
@@ -38,15 +41,6 @@
         suggest="${activityToLayout(activityClass)}"
         default="activity_main"
         help="The name of the layout to create for the activity" />
-
-    <parameter
-        id="activityTitle"
-        name="Title"
-        type="string"
-        constraints="nonempty"
-        default="MainActivity"
-        suggest="${activityClass}"
-        help="The name of the activity. For launcher activities, the application title." />
 
     <parameter
         id="isLauncher"

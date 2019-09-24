@@ -1,6 +1,6 @@
 package ${packageName}.${newPackage};
 
-public enum ${className}Status{
+public enum ${statusClass}{
     IDLE,
     PROCESSING
 }
