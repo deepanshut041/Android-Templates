@@ -6,6 +6,8 @@ import ${packageName}.App;
 import ${packageName}.di.modules.ActivityBuilderModule;
 import ${packageName}.di.modules.AppModule;
 
+import com.squrlabs.mvvm.di.viewmodel.ViewModelModule;
+
 import javax.inject.Singleton;
 
 import dagger.BindsInstance;
@@ -16,6 +18,7 @@ import dagger.android.AndroidInjectionModule;
 @Component(modules = {
         AndroidInjectionModule.class,
         ActivityBuilderModule.class,
+        ViewModelModule.class,
         AppModule.class
 })
 public interface AppComponent {

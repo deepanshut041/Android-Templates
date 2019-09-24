@@ -2,6 +2,8 @@ package ${packageName}.${activityPackage}.${newPackage};
 
 import androidx.lifecycle.ViewModel;
 
+import com.squrlabs.mvvm.di.viewmodel.ViewModelKey;
+
 import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoMap;

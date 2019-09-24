@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.squrlabs.mvvm.ui.BaseActivity;
+
 public class ${fragmentClass} extends BaseFragment<${viewModelClass}, ${fragmentBinding}> {
 
     public ${fragmentClass}() {

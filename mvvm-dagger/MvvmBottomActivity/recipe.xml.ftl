@@ -6,6 +6,9 @@
     <merge from="${resIn}/values/dimens.xml.ftl"
              to="${escapeXmlAttribute(resOut)}/values/dimens.xml" />
 
+    <merge from="AndroidManifest.xml.ftl"
+             to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
+
     <copy from="${resIn}/drawable"
             to="${escapeXmlAttribute(resOut)}/drawable" />
 
@@ -36,23 +39,22 @@
 
 
     <#--  Java File start from here  -->
-
-    <instantiate from="${srcIn}/Activity.java.ftl"
+    <instantiate from="src/app_package/Activity.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}Activity.java" />
 
-    <instantiate from="${srcIn}/Status.java.ftl"
+    <instantiate from="src/app_package/Status.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}Status.java" />
 
 
-    <instantiate from="${srcIn}/ViewModel.java.ftl"
+    <instantiate from="src/app_package/ViewModel.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}ViewModel.java" />
 
 
-    <instantiate from="${srcIn}/ActivityListener.java.ftl"
+    <instantiate from="src/app_package/ActivityListener.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}ActivityListener.java" />
 
                    
-    <instantiate from="${srcIn}/ActivityModule.java.ftl"
+    <instantiate from="src/app_package/ActivityModule.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${newPackage}/${className}ActivityModule.java" />
 
     <#--  Naviagtion Fragment  -->

@@ -2,33 +2,27 @@ package ${packageName}.${newPackage};
 
 import androidx.lifecycle.ViewModel;
 
+import com.squrlabs.mvvm.utils.SingleLiveEvent;
+
 import javax.inject.Inject;
 
-import io.reactivex.disposables.CompositeDisposable;
+public class ${viewModelClass} extends ViewModel {
 
-public class ${className}ViewModel extends ViewModel {
-
-    private CompositeDisposable disposable;
-    private SingleLiveEvent<${className}Status> status;
+    private SingleLiveEvent<${statusClass}> status;
 
     @Inject
-    ${className}ViewModel() {
-        this.disposable = new CompositeDisposable();
+    ${viewModelClass}() {
         status = new SingleLiveEvent<>();
     }
 
 
-    public SingleLiveEvent<${className}Status> getStatus() {
+    public SingleLiveEvent<${statusClass}> getStatus() {
         return status;
     }
 
     @Override
     protected void onCleared() {
         super.onCleared();
-        if (disposable != null) {
-            disposable.clear();
-            disposable = null;
-        }
     }
 
 }
