@@ -2,9 +2,9 @@
 
 This is an Android Studio template for MVVM.It is inspired by [u2020-mvp-android-studio-template](https://github.com/LiveTyping/u2020-mvp-android-studio-template) and follows [Google I/O Android App](https://github.com/google/iosched).
 
-When I follow the Android sample MVVM, for each module/feature, I need to create an Activity, a Fragment, a ViewModel, Module, Listener. Oh, and also the layout file for the activity and fragment. :sad:
+When I follow the Android sample MVVM, for each module/feature, I need to create an Activity, a Fragment, a ViewModel, Module, Listener. Oh, and also the layout file for the activity and fragment.
 
-Taking advantage of the template of Android studio, I created a live template for Android studio so that those files can be created automatically as a starting point. The main goal of this template is to speed up the development process using android MVVM template. This is just a template, so feel free to make changes according to your needs. It also shows how to create a set of files using template files in Android Studio. This template was successfully tested with Android Studio 3.5. :smile:
+Taking advantage of the template of Android studio, I created a live template for Android studio so that those files can be created automatically as a starting point. The main goal of this template is to speed up the development process using android MVVM template. This is just a template, so feel free to make changes according to your needs. It also shows how to create a set of files using template files in Android Studio. This template was successfully tested with Android Studio 3.5.
 
 ## Prerequisites
 
@@ -37,7 +37,11 @@ First of all, create a new app with no actvity and android x support. Than add b
 Enabling ViewBinding
 ```
 android {
-    ....
+    defaultConfig {
+        .....
+        multiDexEnabled true
+    }
+    ......
     dataBinding {
         enabled = true
     }
@@ -55,7 +59,9 @@ dependencies {
     final ARCHITECTURE_COMPONENT_VERSION = '2.1.0'
 
 
+    // Android
     implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     // Dagger 2
     implementation "com.google.dagger:dagger:$DAGGER_VERSION"
@@ -64,8 +70,13 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
     androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
 
+    // MultiDex Support
+    implementation 'androidx.multidex:multidex:2.0.1'
+
     // Android Architecture Components
     implementation "androidx.lifecycle:lifecycle-extensions:$ARCHITECTURE_COMPONENT_VERSION"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$ARCHITECTURE_COMPONENT_VERSION"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$ARCHITECTURE_COMPONENT_VERSION"
 }
 ```
 

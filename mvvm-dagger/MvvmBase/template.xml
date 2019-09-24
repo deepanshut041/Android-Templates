@@ -9,70 +9,12 @@
     <category value="MVVM"/>
     <formfactor value="Mobile"/>
 
-    <parameter id="newPackage"
-        name="New Package Name"
-        type="string"
-        constraints="nonempty"
-        default="main"
-        help="The name of package in which mvvm to be placed"/>
-
-    <parameter id="className"
-        name="Functionality Name"
-        type="string"
-        constraints="class|unique|nonempty"
-        default="Main"
-        help="The name of the functionality that requires MVVM views"/>
-
-    <parameter
-        id="activityClass"
-        name="Activity Name"
-        type="string"
-        constraints="class|unique|nonempty"
-        suggest="${className}Activity"
-        default="MainActivity"
-        visibility="false"
-        help="The name of the activity class to create" />
-
-    <parameter
-        id="layoutName"
-        name="Layout Name"
-        type="string"
-        constraints="layout|unique|nonempty"
-        suggest="${activityToLayout(activityClass)}"
-        default="activity_main"
-        help="The name of the layout to create for the activity" />
-
-    <parameter
-        id="activityTitle"
-        name="Title"
-        type="string"
-        constraints="nonempty"
-        default="MainActivity"
-        suggest="${activityClass}"
-        help="The name of the activity. For launcher activities, the application title." />
-
     <parameter
         id="packageName"
         name="Package name"
         type="string"
         constraints="package"
         default="com.mycompany.myapp" />
-
-    <parameter
-        id="bottomMenu"
-        name="Bottom Menu Name"
-        type="string"
-        constraints="layout|unique"
-        suggest="${classToResource(className)}_bottom"
-        default="activity_main_bottom"
-        visibility="false"
-        help="The name of the Bottom menu to create for the activity" />
-
-    <!-- 128x128 thumbnails relative to template.xml -->
-    <thumbs>
-        <!-- default thumbnail is required -->
-        <thumb>template_bottom_navigation_activity.png</thumb>
-    </thumbs>
 
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />
